@@ -140,3 +140,8 @@ ul.collection li:last-child{
     background-color: #ccc;
     color: black;
 }
+@media(max-width:500px){
+    .input-field{
+        width:40%;
+    }
+}
