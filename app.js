@@ -10,7 +10,7 @@ function loadEventListeners(){
     form.addEventListener('submit',addTask);
     taskList.addEventListener('click',removeTask);
     clearBtn.addEventListener('click',clearTasks);
-    filter.addEventListener('key up',filterTasks);
+    filter.addEventListener('keyup',filterTasks);
     filter.addEventListener('focus', addActive);
     taskInput.addEventListener('focus', addActive);
     filter.addEventListener('blur', removeActive);
@@ -20,7 +20,8 @@ function addActive(e){
     this.parentElement.classList.add('active');
 }
 function removeActive(e){
-    this.parentElement.classList.remove('active');
+    if(this.value==='')
+        this.parentElement.classList.remove('active');
 }
 function addTask(e){
     if(taskInput.value===''){
@@ -76,38 +77,43 @@ function removeTask(e){
     }
 }
 function removefromLS(taskItem){
+    
     let tasks;
     if(localStorage.getItem('tasks')===null){
         tasks=[];
     }else{
         tasks=JSON.parse(localStorage.getItem('tasks'));
+        
     }
     tasks.forEach(function(task,index){
         if(taskItem.textContent===task){
             tasks.splice(index,1);
+            
         }
-    });    
+    });  
+    localStorage.setItem('tasks',JSON.stringify(tasks));  
 }
 function clearTasks(){
-    //taskList.innerHTML='';
-    //faster
-    while(taskList.firstChild){
-        taskList.remove(taskList.firstChild);
-    }
+    taskList.innerHTML='';
     clearfromLS();
+    
 }
 function clearfromLS(){
     localStorage.clear();
+    
 }
 function filterTasks(e){
     const text=e.target.value.toLowerCase();
-    document.querySelectorAll('.collection-item').forEach
-    (function(task){
+    document.querySelectorAll('.collection-item').forEach(function(task){
         const item =task.firstChild.textContent;
-        if(item.toLowerCase().indexOf(task)!=-1){
-            task.style.display='block';
+        
+        if(item.toLowerCase().indexOf(text)!=-1){
+            task.style.display='flex';
+            
+         
         }else{
             task.style.display='none';
+            
         }
     });
 }
