@@ -37,6 +37,7 @@ function addTask(e){
     taskList.appendChild(li);
     storeinLS(taskInput.value);
     taskInput.value='';
+    taskInput.parentElement.classList.remove('active');
     e.preventDefault();
 }
 function getTasks(){
