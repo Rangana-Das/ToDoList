@@ -46,4 +46,6 @@ function setMessage(msg,color){
 function verifySub(e){
     if(name.value===''||email.value===''||password.value===''||confpass.value==='')
         alert('Please fill required fields');
+    else
+        window.open("https://rangana-das.github.io/ToDoList/regsuccess.html","_blank");
 }
