@@ -141,7 +141,7 @@ ul.collection li:last-child{
     color: black;
 }
 @media(max-width:500px){
-    .input-field{
-        width:40%;
+    .input-field input{
+        width:50%;
     }
 }
