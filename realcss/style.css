@@ -85,9 +85,15 @@ ul{
   #btn:hover{
       background-color: #7977fd;
   }
-
   @media(max-width:500px){
       #navbar{
           padding: 1.5rem;
+      }
+      .showcase .showcase-content{
+        position: absolute;
+        top: 80px;
+        left:0;
+        right: 0;
+        bottom: 0;
       }
   }
