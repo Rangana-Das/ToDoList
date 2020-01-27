@@ -77,3 +77,14 @@ span{
 .input-field.active span{
     color: red;
 }
+@media(max-width:500px){
+    .card{
+        width: 70vw;
+    }
+    .input-field input{
+        width:55vw;
+    }
+    .btn{
+        margin-bottom: 30px;
+    }
+}
