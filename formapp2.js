@@ -22,5 +22,5 @@ function verifySub(e){
     if(name.value===''||password.value==='')
         alert('Please fill required fields');
     else
-        window.open("list.html","_blank");
+        window.open("https://rangana-das.github.io/ToDoList/list.html","_blank");
 }
